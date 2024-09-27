@@ -1,53 +1,18 @@
-const students=[{
-    "id": 1,
-    "first_name": "Tresa",
-    "last_name": "Balas",
-    "email": "tbalas0@apple.com"
-  }, {
-    "id": 2,
-    "first_name": "Hobey",
-    "last_name": "Beaulieu",
-    "email": "hbeaulieu1@adobe.com"
-  }, {
-    "id": 3,
-    "first_name": "Meredeth",
-    "last_name": "Pegler",
-    "email": "mpegler2@tinypic.com"
-  }, {
-    "id": 4,
-    "first_name": "Ainslie",
-    "last_name": "Osant",
-    "email": "aosant3@prweb.com"
-  }, {
-    "id": 5,
-    "first_name": "Van",
-    "last_name": "Tomblings",
-    "email": "vtomblings4@china.com.cn"
-  }, {
-    "id": 6,
-    "first_name": "Melany",
-    "last_name": "Orritt",
-    "email": "morritt5@ocn.ne.jp"
-  }, {
-    "id": 7,
-    "first_name": "Efren",
-    "last_name": "Bozier",
-    "email": "ebozier6@bloglines.com"
-  }, {
-    "id": 8,
-    "first_name": "Zedekiah",
-    "last_name": "Pahl",
-    "email": "zpahl7@opera.com"
-  }, {
-    "id": 9,
-    "first_name": "Kellina",
-    "last_name": "O'Hanley",
-    "email": "kohanley8@youtube.com"
-  }, {
-    "id": 10,
-    "first_name": "Felizio",
-    "last_name": "Cookman",
-    "email": "fcookman9@github.io"
-  }]
+const {createPool}=require('mysql2');
 
-  module.exports=students;
+const pool=createPool({
+    host:'localhost',
+    user:'root',
+    password:'Vedant@123',
+    database:'apiint',
+    connectionLimit:5,
+})
+
+// pool.query(`select * from new_table where id>3`,(err,result,fields)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// })
+
+module.exports=pool;
